@@ -17,7 +17,7 @@ collection = db.binance
 def task(arg1, arg2):
     r = requests.get("https://api.binance.com/api/v3/ticker/bookTicker")
     posts = r.json()
-    result1 = collection.insert_one(posts)
+    result1 = collection.insert_many(posts)
 
 signal.signal(signal.SIGALRM, task)
 signal.setitimer(signal.ITIMER_REAL, 1, 1)
