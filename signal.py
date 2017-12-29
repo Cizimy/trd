@@ -9,7 +9,7 @@ import time
 import requests
 
 def task(arg1, arg2):
-    r = 8 * 2
+    r = requests.get("https://api.binance.com/api/v3/ticker/bookTicker?symbol=BNBBTC")
     print(r)
 
 signal.signal(signal.SIGALRM, task)
