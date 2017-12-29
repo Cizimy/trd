@@ -1,21 +1,26 @@
 
 # coding: utf-8
 
-# In[3]:
+# In[15]:
 
 
 from pymongo import MongoClient
+from time import sleep
 import requests
 
 client = MongoClient('10.142.0.3', 27017)
 
-db = client.test_database
-collection = db.test_collection
+db = client.ticker
+collection = db.binance
 
-r = requests.get("https://api.binance.com/api/v3/ticker/price")
+while True:
 
-posts = r.json()
-result1 = collection.insert_many(posts)
+    r = requests.get("https://api.binance.com/api/v3/ticker/bookTicker")
 
-print(posts)
+    posts = r.json()
+    result1 = collection.insert_many(posts)
+    
+    sleep(1)
+
+
 
