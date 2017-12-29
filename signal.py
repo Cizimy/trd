@@ -9,12 +9,12 @@ import time
 import requests
 
 def task(arg1, arg2):
-    r = requests.get("https://api.binance.com/api/v3/ticker/bookTicker?symbol=BNBBTC")
-    data = r.json()
-    print(data)
+    #r = requests.get("https://api.binance.com/api/v3/ticker/bookTicker?symbol=BNBBTC")
+    #data = r.json()
+    print(time.time())
 
 signal.signal(signal.SIGALRM, task)
-signal.setitimer(signal.ITIMER_REAL, 0.1, 0.1)
+signal.setitimer(signal.ITIMER_REAL, 1, 1)
 
 while True:
     time.sleep(1)
