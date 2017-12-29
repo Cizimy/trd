@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[ ]:
+# In[3]:
 
 
 from pymongo import MongoClient
@@ -17,5 +17,5 @@ r = requests.get("https://api.binance.com/api/v3/ticker/price")
 posts = r.json()
 result1 = collection.insert_many(posts)
 
-print("end")
+print(posts)
 
