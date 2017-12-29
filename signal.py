@@ -15,12 +15,12 @@ db = client.ticker
 collection = db.binance
 
 def task(arg1, arg2):
-    r = requests.get("https://api.binance.com/api/v3/ticker/bookTicker")
-    posts = r.json()
-    result1 = collection.insert_many(posts)
+    r = requests.get("https://api.binance.com/api/v3/ticker/bookTicker?symbol=ETHBTC")
+    post = r.json()
+    result1 = collection.insert_one(post)
 
 signal.signal(signal.SIGALRM, task)
-signal.setitimer(signal.ITIMER_REAL, 1, 1)
+signal.setitimer(signal.ITIMER_REAL, 0.995, 0.995)
 
 while True:
     time.sleep(1)
