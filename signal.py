@@ -9,9 +9,8 @@ import time
 import requests
 
 def task(arg1, arg2):
-    #r = requests.get("https://api.binance.com/api/v3/ticker/bookTicker?symbol=BNBBTC")
-    #data = r.json()
-    print(time.time())
+    r = 8 * 2
+    print(r)
 
 signal.signal(signal.SIGALRM, task)
 signal.setitimer(signal.ITIMER_REAL, 1, 1)
