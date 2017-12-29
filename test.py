@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[15]:
+# In[17]:
 
 
 from pymongo import MongoClient
@@ -15,12 +15,12 @@ collection = db.binance
 
 while True:
 
-    r = requests.get("https://api.binance.com/api/v3/ticker/bookTicker")
+    r = requests.get("https://api.binance.com/api/v3/ticker/bookTicker)
 
     posts = r.json()
     result1 = collection.insert_many(posts)
     
-    sleep(0.5)
-
-
+    print(posts)
+    
+    sleep(2)
 
