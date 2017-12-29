@@ -20,7 +20,7 @@ def task(arg1, arg2):
     result1 = collection.insert_many(posts)
 
 signal.signal(signal.SIGALRM, task)
-signal.setitimer(signal.ITIMER_REAL, 1, 1)
+signal.setitimer(signal.ITIMER_REAL, 0.5, 0.5)
 
 while True:
     time.sleep(1)
