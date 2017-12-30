@@ -11,8 +11,8 @@ import requests
 
 client = MongoClient('10.142.0.3', 27017)
 
-db = client.test
-collection = db.test
+db = client.ticker
+collection = db.binance
 
 def task(arg1, arg2):
     r = requests.get("https://api.binance.com/api/v1/time")
