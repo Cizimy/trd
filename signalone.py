@@ -12,7 +12,7 @@ import requests
 client = MongoClient('10.142.0.3', 27017)
 
 db = client.ticker
-collection = db.binancetest
+collection = db.binance
 
 def task(arg1, arg2):
     r = requests.get("https://api.binance.com/api/v3/ticker/bookTicker?symbol=ETHBTC")
