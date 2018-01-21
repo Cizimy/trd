@@ -15,7 +15,7 @@ db = client.ticker
 collection = db.binance
 
 def task(arg1, arg2):
-    r = requests.get("https://api.binance.com/api/v3/ticker/bookTicker")
+    r = requests.get("https://api.binance.com/api/v1/ticker/allPrices")
     posts = r.json()
     result1 = collection.insert_many(posts)
 
